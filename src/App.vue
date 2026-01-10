@@ -1,5 +1,12 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
+export default {
+  data() {
+    return {
+      idEstudiante: ''
+    }
+  }
+}
 </script>
 
 <template>
@@ -7,11 +14,15 @@ import { RouterLink, RouterView } from 'vue-router'
     <nav>
       <RouterLink to="/">Home</RouterLink> |
       <RouterLink to="/about">About</RouterLink> |
-      <RouterLink to="/hola">Hola Mundo</RouterLink> |
+      <RouterLink :to="`/hola/${idEstudiante}`">Hola Mundo</RouterLink> |
       <RouterLink to="/pregunta">Pregunta</RouterLink> |
       <RouterLink to="/pokemon">Pokemon</RouterLink>
     </nav>
-
+    <input
+      type="text"
+      v-model="idEstudiante"
+      placeholder="Ingrese ID del estudiante"
+    />
     <RouterView />
   </div>
 </template>

@@ -21,12 +21,7 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/hola',
-      name: 'hola',
-      component: HolaMundoView
-    },
-    {
-      path: '/hola',
+      path: '/hola/:id',
       name: 'hola',
       component: HolaMundoView
     },
